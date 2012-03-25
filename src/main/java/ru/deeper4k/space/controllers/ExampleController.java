@@ -16,9 +16,9 @@ import javax.inject.Inject;
 import java.util.List;
 
 @Controller
-public class HomeControllerOld {
+public class ExampleController {
 	
-	private static Logger log = LoggerFactory.getLogger(HomeControllerOld.class);
+	private static Logger log = LoggerFactory.getLogger(ExampleController.class);
 
 	@Inject
 	private BookDAO bookDAO;

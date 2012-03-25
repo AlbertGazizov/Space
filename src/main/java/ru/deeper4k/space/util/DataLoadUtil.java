@@ -1,12 +1,10 @@
 package ru.deeper4k.space.util;
 
-import ru.deeper4k.space.entity.Author;
-import ru.deeper4k.space.entity.Book;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.deeper4k.space.entity.Story;
 
 import javax.persistence.*;
-import java.util.GregorianCalendar;
 
 /**
  * Use this class to reset the database state for the test entities.
@@ -41,66 +39,26 @@ public class DataLoadUtil {
 	}
 
 	private static void populateCannedData(EntityManager em) {
-		
-		Author author = new Author();
-		author.setFirstName("JRR");
-		author.setLastName("Tolkein");
+		Story story = new Story();
+        story.setTitle("As a user I'd like to comment my stories");
+        story.setDescription("So that I can communicate with a story's owner");
+        em.persist(story);
 
-		Book hobbit = new Book();
-		hobbit.setAuthor(author);
-		hobbit.setTitle("The Hobbit");
-		hobbit.setPublicationDate(new GregorianCalendar(1937, 11, 1).getTime());
-		em.persist(hobbit);
-		
-		Book fotr = new Book();
-		fotr.setAuthor(author);
-		fotr.setTitle("Fellowship of the Ring");
-		fotr.setPublicationDate(new GregorianCalendar(1954, 06, 24).getTime());
-		em.persist(fotr);
-		
-		Book twoTowers = new Book();
-		twoTowers.setAuthor(author);
-		twoTowers.setTitle("The Two Towers");
-		twoTowers.setPublicationDate(new GregorianCalendar(1954, 10, 11).getTime());
-		em.persist(twoTowers);
-		
-		Book rotk = new Book();
-		rotk.setAuthor(author);
-		rotk.setTitle("Return of the King");
-		rotk.setPublicationDate(new GregorianCalendar(1955, 9, 20).getTime());
-		em.persist(rotk);
-		
-		Author rowling = new Author();
-		rowling.setFirstName("J.K");
-		rowling.setLastName("Rowling");
-		
-		Book hpps = new Book();
-		hpps.setAuthor(rowling);
-		hpps.setTitle("Harry Potter and the Philosophers Stone");
-		hpps.setPublicationDate(new GregorianCalendar(1997, 5, 30).getTime());
-		em.persist(hpps);
-		
-		Book hpcs = new Book();
-		hpcs.setAuthor(rowling);
-		hpcs.setTitle("Harry Potter and the Chamber of Secrets");
-		hpcs.setPublicationDate(new GregorianCalendar(1998, 6, 2).getTime());
-		em.persist(hpcs);
-		
-		Book hppa = new Book();
-		hppa.setAuthor(rowling);
-		hppa.setTitle("Harry Potter and the Prisoner of Azkaban");
-		hppa.setPublicationDate(new GregorianCalendar(1999, 6, 8).getTime());
-		em.persist(hppa);
+        story = new Story();
+        story.setTitle("As a story's owner I'd like to attach files to my stories");
+        story.setDescription("So that I can share story's files with a story's developer");
+        em.persist(story);
+
+        story = new Story();
+        story.setTitle("As a story's owner I'd like to remove my stories");
+        story.setDescription("So that I can remove unnecessary stories");
+        em.persist(story);
+
 	}
 
 	private static void deleteAllExistingData(EntityManager em) {
-		log.info("Deleting existing books");
-		Query bookQuery = em.createQuery("delete from Book");
+		log.info("Deleting existing stories");
+		Query bookQuery = em.createQuery("delete from Story");
 		bookQuery.executeUpdate();
-		
-		Query authorQuery = em.createQuery("delete from Author");
-		authorQuery.executeUpdate();
-		
-		log.info("Deleting existing authors");
-	}	
+	}
 }
