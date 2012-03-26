@@ -57,6 +57,7 @@ public class StoryJpaDao implements StoryDao {
      */
     @Override
     public void remove(Long aId) {
-        _em.remove(aId);
+        Story story = findById(aId);
+        _em.remove(story);
     }
 }

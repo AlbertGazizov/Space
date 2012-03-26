@@ -65,7 +65,7 @@ public class StoriesController {
      * @param aStory the story to update
      */
     @RequestMapping(value = "{id}", method = RequestMethod.PUT) @ResponseStatus(HttpStatus.OK)
-    public void update(@RequestBody Story aStory, @PathVariable String aId) {
+    public void update(@RequestBody Story aStory, @PathVariable("id") Long aId) {
         Assert.isTrue(aStory.getId().equals(aId));
         _storiesService.update(aStory);
     }

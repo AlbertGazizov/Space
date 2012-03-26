@@ -25,3 +25,20 @@ Assuming you have setup your postgres database separately and have updated persi
 4. mvn -e exec:java -Dexec.mainClass=com.deeper4k.space.util.DataLoadUtil  (adds some data to the database)
 5. mvn tomcat:run
 6. Point browser at http://localhost:8080/space
+
+Usefull CURL commands:
+#Get all stories
+curl -i -H "Accept: application/json" http://localhost:8080/api/stories
+
+#Get story by id
+curl -i -H "Accept: application/json" http://localhost:8080/api/stories/1
+
+#Remove story
+curl -i -X DELETE -H "Accept: application/json" http://localhost:8080/api/stories/1
+
+#Create new story
+curl -i -X POST -H "Content-Type: application/json" -H "Accept: application/json" -d '{"title":"New story","description":"Story description"}' http://localhost:8080/api/stories
+
+#Update a story
+curl -i -X PUT -H "Content-Type: application/json" -H "Accept: application/json" -d '{"id":"16","title":"New story","description":"Story description"}' http://localhost:8080/api/stories/16
+
