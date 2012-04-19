@@ -22,7 +22,7 @@ Assuming you have setup your postgres database separately and have updated persi
 3. Use target/hibernate3/sql/schema.ddl to create your database schema
    The following command will create the db schema in specified database:
    psql -d database_name -f target/hibernate3/sql/schema.ddl
-4. mvn -e exec:java -Dexec.mainClass=com.deeper4k.space.util.DataLoadUtil  (adds some data to the database)
+4. mvn -e exec:java -Dexec.mainClass=ru.deeper4k.space.util.DataLoadUtil  (adds some data to the database)
 5. mvn tomcat:run
 6. Point browser at http://localhost:8080/space
 
