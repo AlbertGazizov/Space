@@ -64,8 +64,6 @@
 
     <!-- @Annotation-based configuration is on-->
     <context:annotation-config />
-	<!-- DAO configs -->
-	<bean id="bookDAO" class="ru.deeper4k.space.dao.BookDAOImpl"/>
 
     <!-- @Component, @Service beans loading packages  -->
     <context:component-scan base-package="ru.deeper4k.space.dao" />

@@ -14,29 +14,36 @@ public interface ProjectDao {
 
     /**
      * Get all projects
-     * @return stories
+     * @return projects
      */
     List<Project> getAll();
 
     /**
      * Get a project by id
      * @param aId the story id
-     * @return a story
+     * @return a project
      */
     public Project getById(Long aId);
 
     /**
+     * Get a project by owner identifier
+     * @param aOwnerId the owner user id
+     * @return a project
+     */
+    public List<Project> getByOwnerId(Long aOwnerId);
+
+    /**
      * Saves project
-     * @param aStory the project to save
+     * @param aProject the project to save
      * @return the saved project
      */
-    public Project create(Project aStory);
+    public Project create(Project aProject);
 
     /**
      * Update a given project from db
-     * @param aStory the project to update
+     * @param aProject the project to update
      */
-    public void update(Project aStory);
+    public void update(Project aProject);
 
     /**
      * Remove project with the specified id

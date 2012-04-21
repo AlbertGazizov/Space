@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
- * Stories DAO  JPA implementation
+ * Stories DAO JPA implementation
  *
  * @author Albert Gazizov
  */
