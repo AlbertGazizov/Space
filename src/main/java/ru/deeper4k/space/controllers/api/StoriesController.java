@@ -1,4 +1,4 @@
-package ru.deeper4k.space.controllers;
+package ru.deeper4k.space.controllers.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -31,8 +31,8 @@ public class ProjectsServiceImpl implements ProjectsService {
      * {@inheritDoc}
      */
     @Override
-    public List<Project> getProjects() {
-        return _projectDao.getAll();
+    public List<Project> getProjectsByUserId(Long aUserId) {
+        return _projectDao.getByOwnerId(aUserId);
     }
 
     /**
@@ -47,6 +47,7 @@ public class ProjectsServiceImpl implements ProjectsService {
      * {@inheritDoc}
      */
     @Override
+    @Transactional
     public Project createProject(Project aProject) {
         return _projectDao.create(aProject);
     }
@@ -55,6 +56,7 @@ public class ProjectsServiceImpl implements ProjectsService {
      * {@inheritDoc}
      */
     @Override
+    @Transactional
     public void updateProject(Project aProject) {
         _projectDao.update(aProject);    }
 
@@ -62,6 +64,7 @@ public class ProjectsServiceImpl implements ProjectsService {
      * {@inheritDoc}
      */
     @Override
+    @Transactional
     public void removeProject(Long aId) {
         _projectDao.remove(aId);
     }

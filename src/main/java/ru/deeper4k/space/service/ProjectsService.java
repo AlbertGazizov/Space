@@ -13,10 +13,10 @@ import java.util.List;
 public interface ProjectsService {
 
     /**
-     * Get all projects
-     * @return projects
+     * Get all projects that specified user owns
+     * @return user's projects
      */
-    public List<Project> getProjects();
+    public List<Project> getProjectsByUserId(Long aUserId);
 
     /**
      * Get a project by id

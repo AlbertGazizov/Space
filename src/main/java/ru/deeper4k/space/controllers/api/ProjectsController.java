@@ -1,4 +1,4 @@
-package ru.deeper4k.space.controllers;
+package ru.deeper4k.space.controllers.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,18 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 import ru.deeper4k.space.entity.Project;
-import ru.deeper4k.space.entity.Story;
 import ru.deeper4k.space.service.ProjectsService;
 
 import java.util.List;
-
 
 /**
  * Projects controller
  *
  * @author Albert Gazizov
  */
-
 @Controller
 @RequestMapping("/api/projects")
 public class ProjectsController {
@@ -36,7 +33,9 @@ public class ProjectsController {
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json") @ResponseBody
     public List<Project> findAll() {
-        return _projectsService.getProjects();
+        // TODO rewrite
+        Long currentUserId = 1L;
+        return _projectsService.getProjectsByUserId(currentUserId);
     }
 
     /**

@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +26,6 @@
 </head>
 
 <body>
-<%@ page isELIgnored ="true" %>
 <div class="navbar">
     <div class="navbar-inner">
         <div class="container">
@@ -71,6 +74,7 @@
 </div>
 
 <div class="container">
+    <c:out value="${project.name}" />
     <!-- Example row of columns -->
     <div id="dashboard">
 
@@ -160,14 +164,14 @@
     </div>
     <div class="modal-body">
         <p>
-            <form class="story-form">
-                <label>Title</label>
-                <input type="text" name="title" class="span3" placeholder="Type title...">
-                <label>Description</label>
-                <textarea name="description" class="span3" placeholder="Type description..."></textarea>
-                <br/>
-                <button type="submit" class="btn save">Add</button>
-            </form>
+        <form class="story-form">
+            <label>Title</label>
+            <input type="text" name="title" class="span3" placeholder="Type title...">
+            <label>Description</label>
+            <textarea name="description" class="span3" placeholder="Type description..."></textarea>
+            <br/>
+            <button type="submit" class="btn save">Add</button>
+        </form>
         </p>
     </div>
 </script>
