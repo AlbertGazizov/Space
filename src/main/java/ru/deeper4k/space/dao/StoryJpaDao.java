@@ -23,7 +23,7 @@ public class StoryJpaDao implements StoryDao {
      * {@inheritDoc}
      */
     @Override
-    public List<Story> findAll() {
+    public List<Story> getAll() {
         return  _em.createQuery("Select distinct story from Story story").getResultList();
     }
 
@@ -31,7 +31,7 @@ public class StoryJpaDao implements StoryDao {
      * {@inheritDoc}
      */
     @Override
-    public Story findById(Long aId) {
+    public Story getById(Long aId) {
         return _em.find(Story.class, aId);
     }
 
@@ -57,7 +57,7 @@ public class StoryJpaDao implements StoryDao {
      */
     @Override
     public void remove(Long aId) {
-        Story story = findById(aId);
+        Story story = getById(aId);
         _em.remove(story);
     }
 }

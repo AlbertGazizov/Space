@@ -15,14 +15,14 @@ public interface StoryDao {
      * Get all stories
      * @return stories
      */
-    List<Story> findAll();
+    List<Story> getAll();
 
     /**
      * Get a story by id
      * @param aId the story id
      * @return a story
      */
-    public Story findById(Long aId);
+    public Story getById(Long aId);
 
     /**
      * Saves story
